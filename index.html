@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>15 Years of Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body class="is-locked">
+    <!-- INTRO OVERLAY -->
+    <div id="intro-overlay" class="intro-overlay">
+      <div id="screen-initial" class="intro-screen active">
+        <div class="intro-visuals">
+          <img src="images/cat1.jpg" alt="Cute kitten" class="intro-cat cat-left">
+          <img src="images/cat2.jpg" alt="Cute kitten with flowers" class="intro-cat cat-right">
+        </div>
+        <p class="intro-message">Hey!! I made something for you…<br>Do you want to see?</p>
+        <div class="intro-actions" style="opacity: 0; animation: fadeIn 1s ease 0.8s forwards;">
+          <button type="button" class="btn btn--primary" id="btn-yes">Yes 💖</button>
+          <button type="button" class="btn btn--ghost" id="btn-no">No 😏</button>
+        </div>
+      </div>
+
+      <div id="screen-no" class="intro-screen intro-screen--angry" hidden>
+        <div class="intro-visuals">
+          <img src="images/cat3.jpg" alt="Angry cat" class="intro-cat cat-left angry-cat">
+          <img src="images/cat4.jpg" alt="Angry cat" class="intro-cat cat-right angry-cat">
+        </div>
+        <p class="intro-message">HOW DARE YOU 😤</p>
+        <div class="intro-actions">
+          <button type="button" class="btn btn--ghost" id="btn-goback">Go back</button>
+        </div>
+      </div>
+
+      <div id="screen-yes" class="intro-screen intro-screen--warm" hidden>
+        <div class="intro-visuals-centered">
+          <img src="images/cat5.jpg" alt="Affectionate cat" class="intro-cat cat-main">
+        </div>
+        <p class="intro-message js-reveal-text">That’s a good girl 💋</p>
+        <div class="intro-actions js-reveal-btn">
+          <button type="button" class="btn btn--primary" id="btn-final-click">Click</button>
+        </div>
+      </div>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar" role="banner">
+      <div class="container topbar__inner">
+        <a class="brand" href="#hero" aria-label="Go to top">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">15 Years of Us</span>
+        </a>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a href="#memory-cards">Memories</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#secret-unlock">Secret</a>
+          <a href="#final-surprise">Final</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section id="hero" class="hero" aria-label="15 Years of Us hero">
+        <div class="hero__inner">
+          <div class="hero__grid">
+            <div class="hero__copy">
+              <h1>15 Years of Us</h1>
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="#memory-cards">Explore memories</a>
+                <a class="btn btn--ghost" href="#gallery">View gallery</a>
+              </div>
+            </div>
+
+            <div class="hero__media" aria-hidden="true">
+              <!-- Replace src with your own hero image -->
+              <img
+                alt="Two friends celebrating together"
+                src="images/hero.jpg"
+                class="img-glow"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMORY CARDS -->
+      <section id="memory-cards" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Memories of Us</h2>
+            <p>Six chapters of a story that’s still being written.</p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- Chapter 1 -->
+            <article class="memory-card" style="--card-rot: -1deg; --photo-rot: 1deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch1.jpg" alt="Chapter One" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter One</h3>
+                <p>It all started with two strangers who had no idea they were about to become forever.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "You made ordinary days feel like stories worth telling."
+                </div>
+              </div>
+            </article>
+
+            <!-- Chapter 2 -->
+            <article class="memory-card" style="--card-rot: 1deg; --photo-rot: -1.5deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch2.jpg" alt="Chapter Two" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter Two</h3>
+                <p>Laughs that stuck, conversations that never really ended.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "Every “I’m here” built the kind of trust you can feel."
+                </div>
+              </div>
+            </article>
+
+            <!-- Chapter 3 -->
+            <article class="memory-card" style="--card-rot: -0.5deg; --photo-rot: 0.8deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch3.jpg" alt="Chapter Three" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter Three</h3>
+                <p>We grew, we changed, we stumbled — but somehow, we never let go of each other.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "We kept choosing each other, even when it wasn’t easy."
+                </div>
+              </div>
+            </article>
+
+            <!-- Chapter 4 -->
+            <article class="memory-card" style="--card-rot: 1.2deg; --photo-rot: -1deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch4.jpg" alt="Chapter Four" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter Four</h3>
+                <p>Late nights, endless talks, and the quiet comfort of always having each other.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "That’s what real friendship feels like: steady, warm, and true."
+                </div>
+              </div>
+            </article>
+
+            <!-- Chapter 5 -->
+            <article class="memory-card" style="--card-rot: -1.5deg; --photo-rot: 2deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch5.jpg" alt="Chapter Five" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter Five</h3>
+                <p>Dreams we whispered back then, and the future we’re still chasing side by side.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "You bring clarity to my chaos, and hope to every plan."
+                </div>
+              </div>
+            </article>
+
+            <!-- Chapter 6 -->
+            <article class="memory-card" style="--card-rot: 0.8deg; --photo-rot: -0.5deg;">
+              <div class="memory-card__media">
+                <div class="chapter-photo">
+                  <img src="images/ch6.jpg" alt="Chapter Six" loading="lazy" class="img-glow">
+                </div>
+              </div>
+              <div class="memory-card__body">
+                <h3>Chapter Six</h3>
+                <p>And now we’re here: fifteen years, still growing together.</p>
+                <button type="button" class="btn btn--sm btn--ghost js-card-reveal">The secret bit</button>
+                <div class="memory-card__reveal" hidden>
+                  "I’m proud of us — and excited for what comes next."
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY (IMAGES + VIDEO) -->
+      <section id="gallery" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Gallery</h2>
+            <p>Highlights in photos, and one special moment on video.</p>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item gallery-item--image">
+              <div class="gallery-item__media">
+                <img src="images/p1.jpg" alt="Places that hold pieces of us" loading="lazy" decoding="async" class="img-glow" />
+              </div>
+              <figcaption>Places that hold pieces of us, even when we’ve moved on.</figcaption>
+            </figure>
+
+            <figure class="gallery-item gallery-item--image">
+              <div class="gallery-item__media">
+                <img src="images/p2.jpg" alt="Moments we wished we could pause" loading="lazy" decoding="async" class="img-glow" />
+              </div>
+              <figcaption>Moments we wished we could pause… just a little longer.</figcaption>
+            </figure>
+
+            <figure class="gallery-item gallery-item--image">
+              <div class="gallery-item__media">
+                <img src="images/p3.jpg" alt="From silly memories to everything we’ve become" loading="lazy" decoding="async" class="img-glow" />
+              </div>
+              <figcaption>From silly memories to everything we’ve become — it was always us.</figcaption>
+            </figure>
+
+            <figure class="gallery-item gallery-item--video">
+              <div class="gallery-item__media">
+                <video controls preload="metadata">
+                  <source src="video/memory.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>Press play… and feel us all over again.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPECIAL MESSAGE + WHY YOU ARE SPECIAL -->
+      <section id="special-message" class="section" data-animate>
+        <div class="container">
+          <div class="special">
+            <div class="special__message">
+              <h2>Special message</h2>
+              <p class="lead">
+                Fifteen years with you isn’t just time — it’s a thousand little moments that quietly became my life. Through every version of me, you stayed… and that means more than words can ever hold.
+              </p>
+              
+              <div class="special__calligraphy">
+                From silly memories<br>
+                to who we are today…<br><br>
+                we really did it, didn’t we?<br><br>
+                15 years strong 💛
+              </div>
+            </div>
+
+            <div class="special__why">
+              <h3>Why you are special</h3>
+              <ul class="reason-list">
+                <li>The one who understands me, even when I don’t have the words to explain.</li>
+                <li>The one who stayed, even through the versions of me that were hard to love.</li>
+                <li>The one who turns ordinary days into moments I end up cherishing forever.</li>
+                <li>The one whose presence feels like home, no matter where we are.</li>
+                <li>You’re not just my best friend — you’re my soul sister, the one my heart chose.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- FRIENDSHIP COUNTER -->
+      <section id="friendship-counter" class="section" data-animate>
+        <div class="container">
+          <div class="section__header" style="text-align: center;">
+            <h2>Friendship counter</h2>
+            <p>From the moment we met… time just kept choosing us.</p>
+            <p class="muted" style="margin-top: 8px;">💛 Since: 3 April 2010</p>
+          </div>
+
+          <div class="counter" id="live-counter-grid">
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-years" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Years</div>
+            </div>
+
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-months" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Months</div>
+            </div>
+
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-days" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Days</div>
+            </div>
+            
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-hours" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Hours</div>
+            </div>
+
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-minutes" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Minutes</div>
+            </div>
+
+            <div class="counter__item" style="text-align: center;">
+              <div class="counter__value">
+                <span id="counter-seconds" class="counter-number">0</span>
+              </div>
+              <div class="counter__label">Seconds</div>
+            </div>
+          </div>
+          
+          <div style="text-align: center; margin-top: 28px;">
+            <p style="font-family: 'Playfair Display', ui-serif, Georgia, serif; font-size: 1.3rem; font-style: italic; color: rgba(255,255,255,0.85);">
+              “And still… it feels like we just started.”
+            </p>
+          </div>
+
+          <div class="counter__actions" style="justify-content: center; margin-top: 24px;">
+            <button type="button" class="btn btn--primary" id="counterBtn">Relive our years 💫</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECRET MESSAGE UNLOCK -->
+      <section id="secret-unlock" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Secret message unlock</h2>
+            <p>Enter the phrase to reveal something special.</p>
+          </div>
+
+          <div class="unlock">
+            <div class="unlock__copy">
+              <h3>Do you remember?</h3>
+              <p>
+                What were we always called?
+              </p>
+            </div>
+            <div class="unlock__form">
+              <label for="secretPhrase" class="visually-hidden">Secret phrase</label>
+              <input type="text" id="secretPhrase" placeholder="Type here..." autocomplete="off" />
+              <button type="button" class="btn btn--primary w-full" id="unlockBtn">
+                Unlock
+              </button>
+            </div>
+          </div>
+
+          <div class="reveal-box glass-reveal" id="secretResult" hidden>
+            <div class="reveal-box__text" id="secretText"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OPEN WHEN LETTERS -->
+      <section id="open-when" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Open when letters</h2>
+            <p>Little messages for the moments you need them most.</p>
+          </div>
+
+          <div class="letters-grid">
+            <article class="letter">
+              <h3>Open when you need a smile</h3>
+              <p class="muted">A quick reminder that you’re loved beyond words.</p>
+              <button type="button" class="btn btn--ghost js-letter-open" data-letter="letter1">
+                Open letter
+              </button>
+              <div class="letter__body" id="letter1" hidden>
+                Dear you, smile again. The world is softer when you’re in it.
+              </div>
+            </article>
+
+            <article class="letter">
+              <h3>Open when you doubt yourself</h3>
+              <p class="muted">Proof that you’re stronger than you think.</p>
+              <button type="button" class="btn btn--ghost js-letter-open" data-letter="letter2">
+                Open letter
+              </button>
+              <div class="letter__body" id="letter2" hidden>
+                You’ve already handled so much. Keep going — I believe in you.
+              </div>
+            </article>
+
+            <article class="letter">
+              <h3>Open when you miss me</h3>
+              <p class="muted">A message you can carry until we meet again.</p>
+              <button type="button" class="btn btn--ghost js-letter-open" data-letter="letter3">
+                Open letter
+              </button>
+              <div class="letter__body" id="letter3" hidden>
+                Distance can’t erase what we built. I’m always rooting for you.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VOICE NOTE (AUDIO) -->
+      <section id="voice-note" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Something I wanted you to hear…</h2>
+            <p>Don’t rush this… just listen 💫</p>
+          </div>
+
+          <div class="audio-card" id="customAudioCard">
+            <div class="audio-card__media" style="display: flex; justify-content: center; align-items: center; min-height: 140px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.05); background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0)); box-shadow: inset 0 0 20px rgba(155,124,255,0.05);">
+              <div class="audio-visualizer-placeholder">
+                 <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: rgba(155, 124, 255, 0.8);">
+                    <path d="M12 2v20M17 5v14M22 10v4M7 5v14M2 10v4"/>
+                 </svg>
+              </div>
+            </div>
+            <div class="audio-card__content">
+              <audio id="customAudioElement">
+                <source src="audio/WhatsApp%20Audio%202026-03-26%20at%206.45.29%20PM.mpeg" type="audio/mpeg" />
+                <source src="audio/WhatsApp Audio 2026-03-26 at 6.45.29 PM.mpeg" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+
+              <div class="custom-player">
+                <button type="button" class="player-btn" id="playPauseBtn">
+                  <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <svg id="pauseIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                </button>
+                <div class="player-progress-container" id="progressContainer">
+                  <div class="player-progress-bar" id="progressBar"></div>
+                </div>
+                <div class="player-time" id="timeDisplay">0:00 / 0:00</div>
+              </div>
+
+              <p class="audio-caption">This… is everything I couldn’t put into text.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUZZLE REVEAL -->
+      <section id="puzzle" class="section" data-animate>
+        <div class="container">
+          <div class="section__header">
+            <h2>Puzzle reveal</h2>
+            <p>Solve it to reveal what you’ve been waiting for.</p>
+          </div>
+
+          <div class="puzzle">
+            <div class="puzzle__copy">
+              <h3>Solve the puzzle</h3>
+              <p>Unscramble this phrase:</p>
+              <div class="puzzle__clue" style="font-size: 1.25rem; margin: 16px 0; color: #53f2d1; letter-spacing: 2px; font-weight: 500;">
+                "ew shcooe caeh ehort ayslwa"
+              </div>
+              <p class="muted" style="margin-top: 12px; font-style: italic;">Clue: The way we keep choosing each other.</p>
+            </div>
+
+            <div class="puzzle__form">
+              <label class="visually-hidden" for="puzzleAnswer">Puzzle answer</label>
+              <input
+                id="puzzleAnswer"
+                type="text"
+                autocomplete="off"
+                placeholder="Type your answer..."
+                style="margin-bottom: 12px;"
+              />
+              <button type="button" class="btn btn--primary w-full" id="puzzleBtn">Reveal</button>
+            </div>
+          </div>
+            
+          <div class="reveal-box glass-reveal" id="puzzleResult" hidden>
+            <div class="reveal-box__text" id="puzzleText"></div>
+            
+            <div class="puzzle-image-wrapper" id="puzzleImgWrapper" style="display: none; margin-top: 32px; flex-direction: column; align-items: center;">
+              <img src="images/puzzle-reveal.jpg" alt="Memory reveal" class="puzzle-reveal-img" style="border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.3), 0 0 25px rgba(155, 124, 255, 0.2); width: 100%; max-width: 450px; height: auto;" />
+              <p class="audio-caption puzzle-caption" style="text-align: center;">Still us. Still always. 💫</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL SURPRISE SECTION -->
+      <section id="final-surprise" class="section">
+        <div class="container">
+          <div class="final-entry-wrapper" id="finalEntryWrapper">
+            <div class="section__header" style="text-align: center;">
+              <p style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic;">Before this ends… there’s one last thing.</p>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 30px;">
+              <button type="button" class="btn btn--primary btn--big final-entry-btn" id="finalBtn">
+                Continue
+              </button>
+            </div>
+          </div>
+
+          <div id="finalSurpriseContent" class="final-surprise-content" hidden>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px;">And finally…</h2>
+            
+            <div class="final-message-block">
+              <p class="final-msg-line">No matter how much time passes…</p>
+              <p class="final-msg-line">no matter where life takes us…</p>
+              <br>
+              <p class="final-msg-line" style="font-size: 2rem; font-weight: 600;">you will always be</p>
+              <p class="final-msg-line" style="font-size: 2rem; font-weight: 600; color: var(--accent-pink);">my person,</p>
+              <p class="final-msg-line" style="font-size: 2rem; font-weight: 600; color: var(--accent-lavender);">my safe place,</p>
+              <p class="final-msg-line" style="font-size: 2rem; font-weight: 600;">my forever.</p>
+              <br>
+              <p class="final-msg-line" style="font-family: 'Dancing Script', cursive; font-size: 2.2rem;">15 years… and still not enough 💖</p>
+            </div>
+
+            <div class="final-photo-container" id="finalPhotoContainer">
+              <img src="images/final-reveal.jpg" alt="Our best photo together" id="finalPhoto" />
+            </div>
+
+            <p class="closing-line" id="closingLine">This is just the beginning…</p>
+
+            <div class="replay-btn" id="replayBtnWrapper">
+              <button type="button" class="btn btn--ghost" id="scrollTopBtn">
+                Replay our story 💫
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="footer__brand">Made with love and patience.</div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
